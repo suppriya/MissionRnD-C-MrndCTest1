@@ -42,6 +42,17 @@ int between_days(struct node *date1head, struct node *date2head){
 		if ((temp2->data < 0) || (temp2->data>9))
 			return -1;
 	}
+	if ((date1head == NULL) && (date2head == NULL))
+	{
+		return -1;
+	}
+	if ((date1head != NULL) && (date2head == NULL))
+	{
+		return -1;
+	}
+	if ((date1head == NULL) && (date2head != NULL))
+	{
+		return -1;
+	}
 
-	return -1;
 }
