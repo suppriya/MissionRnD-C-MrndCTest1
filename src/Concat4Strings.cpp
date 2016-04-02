@@ -28,6 +28,24 @@ Difficulty : Hard
 #include <stdio.h>
 
 char * concat_4strings(char *s1, char *s2, char *s3, char *s4){
-	//Return the new string created.
-	return NULL;
+	if ((s1 == NULL) && (s2 == NULL) && (s3 == NULL) && (s4 == NULL))
+	{
+		return NULL;
+	}
+	if ((s1 != NULL) && (s2 == NULL) && (s3 == NULL) && (s4 == NULL))
+	{
+		return s1;
+	}
+	if ((s1 == NULL) && (s2 != NULL) && (s3 == NULL) && (s4 == NULL))
+	{
+		return s2;
+	}
+	if ((s1 == NULL) && (s2 == NULL) && (s3 != NULL) && (s4 == NULL))
+	{
+		return s3;
+	}
+	if ((s1 == NULL) && (s2 == NULL) && (s3 == NULL) && (s4 != NULL))
+	{
+		return s4;
+	}
 }

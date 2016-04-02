@@ -33,5 +33,60 @@ Difficulty : Medium
 
 int * find_sequences(int *arr, int len){
 	//Return final array which has 6indexes [AP1_S,AP1_E,AP2_S,AP2_E,GP1_S,GP2_E]
+	if ((arr != NULL) && (arr != 0))
+	{
+		int res[6] = { 0 }, i, j, k, d;
+		k = 0;
+		for (i = 0; i < len; i++)
+		{
+			d = arr[i + 1] - arr[i];
+			int c = 0;
+			for (j = i + 1; j < len; j++)
+			{
+				if (arr[j + 1] - arr[j] == d)
+				{
+					c++;
+				}
+				else if (arr[j + 1] - arr[j] != d)
+				{
+					if (c >= 2)
+						res[k++] = i;
+					res[k++] = j;
+					break;
+				}
+			}
+			if (k == 3)
+				break;
+		}
+		for (i = 0; i < len; i++)
+		{
+			if (arr[i] != 0)
+			{
+				d = (arr[i + 1] / arr[i]);
+			}
+			if (d != 0)
+			{
+				int c = 0;
+				for (j = i + 1; j < len; j++)
+				{
+					if ((arr[j + 1] / arr[j]) == d)
+					{
+						c++;
+					}
+					else if ((arr[j + 1] / arr[j]) != d)
+					{
+						if (c >= 2)
+							res[k++] = i;
+						res[k++] = j;
+						break;
+					}
+					
+				}
+			}
+			if (k == 5)
+				break;
+		}
+		return res;
+	}
 	return NULL;
 }
