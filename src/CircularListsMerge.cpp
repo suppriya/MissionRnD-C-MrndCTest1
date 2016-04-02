@@ -60,5 +60,5 @@ int merge_circularlists(struct node **head1, struct node **head2){
 		a=Sort(temp1, temp2);
 		return a;
 	}*/
-	 
+	return NULL;
 	 }
